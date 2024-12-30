@@ -278,6 +278,10 @@ func (LELibObj *LELib) GetLEAccount() (acnt *acme.Account, err error) {
     acnt, err = client.GetReg(ctx, "")
     if err != nil {return nil, fmt.Errorf("error -- LE GetReg account: %v\n", err)}
 
+    if acnt.Status != "valid" {
+        return acnt, fmt.Errorf("error -- LE acount is not valid. status: %s\n", acnt.Status)
+    }
+
     return acnt, nil
 }
 
