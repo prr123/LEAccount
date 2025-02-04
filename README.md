@@ -4,8 +4,13 @@ The program assume that an environmental variable LEDir exists.
 LEDir point to the directory that holds the LE account files.
 After a successful LE account is creates there should exist a LE private and public account key file.  
 
-Naming convention: <LE account name><Prod|Test><Priv|Pub>.key  
+Naming convention of the key files: <LE account name><Prod|Test><Priv|Pub>.key  
 example: azulTestPriv.key and azulTestPub.key
+
+The programs are looking for a file with the name <accountname>_info.yaml. That file is a yaml file that contains contact mailing addresses
+for the Let's Encrypt account.
+
+
 
 ## createLEAccount
 
@@ -14,9 +19,15 @@ The info file contains the contact information (e.g. mailing addresses).
 
 usage: ./createLEAccount /acnt=name /type=[prod|test] [/dbg]  
 
-## check LEAccount
+## checkLEAccount
 
-Program that that checks an Let's Encrypt Acoount.  
+Program that that checks an Let's Encrypt Account.  
 
 usage: ./checkLEAccount /acnt=name /type=[prod|test] [/dbg]  
 
+## LEAccount
+
+Programs that combines check and create. 
+
+usage: ./checkLEAccount /acnt=name [/cmd=[create|check]] /type=[prod|test] [/dbg]  
+default is check!  
