@@ -27,7 +27,7 @@ usage: ./checkLEAccount /acnt=name /type=[prod|test] [/dbg]
 
 ## LEAccount
 
-Programs that combines check and create. 
+A program that combines check and create programs into one.  
 
 usage: ./checkLEAccount /acnt=name [/cmd=[create|check]] /type=[prod|test] [/dbg]  
 default is check!  
